@@ -8,17 +8,11 @@ public class Cipher
     public static final String CIPHER_ALPHABET = "dfxyhrklvwuasgimnojpqetbcz";
 
     public String encrypt(String inputString) {
-        
-        // output string will be collected in this variable, one char at a time
-        String outputString = "";
-        
-        // for all chars in the input string
-        for (int i = 0; i < inputString.length(); i++)   
-        {
-
-        }
-
-        return outputString;
+    StringBuilder sb = new StringBuilder(inputString.length());
+    for (int i = 0; i < inputString.length(); i++) {
+        sb.append(replaceChar(inputString.charAt(i), true));
+    }
+    return sb.toString();
     }
 
     public String decrypt(String inputString) {
@@ -57,3 +51,4 @@ public class Cipher
     }
 
 }   
+
