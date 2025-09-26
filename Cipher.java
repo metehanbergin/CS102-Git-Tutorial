@@ -22,14 +22,11 @@ public class Cipher
     }
 
     public String decrypt(String inputString) {
-        
-        // output string will be collected in this variable, one char at a time
-        String outputString = "";
-        
-        replaceChar('a',true);
-        
-        return outputString;
-    }
+        StringBuilder sb = new StringBuilder(inputString.length());
+        for (int i = 0; i < inputString.length(); i++) {
+            sb.append(replaceChar(inputString.charAt(i), false));
+        }
+    return sb.toString();}
 
     // replaces the given input char based on the given isEncrypt variable
     // if isEncrypt == true -> original to encrypted
@@ -58,4 +55,5 @@ public class Cipher
         // if we did not find it in the alphabet, then return the original char
         return inputChar;
     }
+
 }   
